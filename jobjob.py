@@ -20,11 +20,11 @@ for line in lines:
 
 for url in urls:
     while True:
-        if get_job_count() < 10:
-            command = "./arachni --output-verbose --checks=* " + url + " --report-save-path=./report/" + url.replace(":", "_").replace("/", "_") + ".afr &"
+        if get_job_count() < 2:
+            command = "./arachni --output-verbose --checks=* --http-user-agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36' " + url + " --report-save-path=./report/" + url.replace(":", "_").replace("/", "_") + ".afr &"
             print "Executing command: " + command
             os.system(command)
-            sleep(1)
+            sleep(2)
             break
         else:
             sleep(5)
