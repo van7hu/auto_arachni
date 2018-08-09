@@ -18,7 +18,7 @@ urls = []
 for line in lines:
     urls.append(line.replace("\n", ""))
 
-with open("log.txt", "a+") as f :
+with open("log.txt", "a+") as f:
     f.write("Current: " + sys.argv[1] + "\n")
 
 for url in urls:
